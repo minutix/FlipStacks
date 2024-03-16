@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		1584137C2BA6399800C442D4 /* FlipStacksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584137B2BA6399800C442D4 /* FlipStacksApp.swift */; };
 		1584137E2BA6399800C442D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584137D2BA6399800C442D4 /* ContentView.swift */; };
-		158413802BA6399900C442D4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584137F2BA6399900C442D4 /* Item.swift */; };
 		158413822BA6399B00C442D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158413812BA6399B00C442D4 /* Assets.xcassets */; };
 		158413862BA6399B00C442D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158413852BA6399B00C442D4 /* Preview Assets.xcassets */; };
+		1584138D2BA639A900C442D4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584138C2BA639A900C442D4 /* Card.swift */; };
+		1584138F2BA63C8800C442D4 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584138E2BA63C8800C442D4 /* CardDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		158413782BA6399800C442D4 /* FlipStacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipStacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1584137B2BA6399800C442D4 /* FlipStacksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipStacksApp.swift; sourceTree = "<group>"; };
 		1584137D2BA6399800C442D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1584137F2BA6399900C442D4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		158413812BA6399B00C442D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158413832BA6399B00C442D4 /* FlipStacks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlipStacks.entitlements; sourceTree = "<group>"; };
 		158413852BA6399B00C442D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1584138C2BA639A900C442D4 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1584138E2BA63C8800C442D4 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,8 @@
 			children = (
 				1584137B2BA6399800C442D4 /* FlipStacksApp.swift */,
 				1584137D2BA6399800C442D4 /* ContentView.swift */,
-				1584137F2BA6399900C442D4 /* Item.swift */,
+				1584138E2BA63C8800C442D4 /* CardDetailView.swift */,
+				1584138C2BA639A900C442D4 /* Card.swift */,
 				158413812BA6399B00C442D4 /* Assets.xcassets */,
 				158413832BA6399B00C442D4 /* FlipStacks.entitlements */,
 				158413842BA6399B00C442D4 /* Preview Content */,
@@ -143,8 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1584137E2BA6399800C442D4 /* ContentView.swift in Sources */,
-				158413802BA6399900C442D4 /* Item.swift in Sources */,
 				1584137C2BA6399800C442D4 /* FlipStacksApp.swift in Sources */,
+				1584138D2BA639A900C442D4 /* Card.swift in Sources */,
+				1584138F2BA63C8800C442D4 /* CardDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

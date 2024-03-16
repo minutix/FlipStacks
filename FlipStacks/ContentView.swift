@@ -10,43 +10,33 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @Query private var items: [Card]
+    @State var showSolution = true
+    @State var index = 0
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+        NavigationStack {
+            VStack {
+                if items.indices.contains(index) {
+                    CardDetailView(item: items[index], showSolution: showSolution)
+                } else {
+                    VStack {
+                        Text("ALL_CARDS_REVIEWED")
+                        NavigationLink {
+                            
+                        } label: {
+                            Text("BUTTON.ADD_NEW_CARDS")
+                        }
                     }
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
+        .padding()
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let newItem = Card(frontSide: "Hello!", backSide: "¡Hola!")
             modelContext.insert(newItem)
         }
     }
@@ -62,5 +52,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Card.self, inMemory: true)
 }
