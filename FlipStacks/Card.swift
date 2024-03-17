@@ -12,9 +12,17 @@ import SwiftData
 final class Card {
     var frontSide: String = ""
     var backSide: String = ""
+    var phase: Int = 0
+    var lastSeen: Date = Date()
     
+    init(frontSide: String, backSide: String, lastSeen: Date) {
+        self.frontSide = frontSide
+        self.backSide = backSide
+        self.lastSeen = lastSeen
+    }
     init(frontSide: String, backSide: String) {
         self.frontSide = frontSide
         self.backSide = backSide
+        self.lastSeen = Date()
     }
 }
