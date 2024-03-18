@@ -30,6 +30,15 @@ struct CardListView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem {
+                NavigationLink {
+                    AddView()
+                } label: {
+                    Label("BUTTON.ADD_NEW_CARDS", systemImage: "plus")
+                }
+            }
+        }
     }
 }
 
