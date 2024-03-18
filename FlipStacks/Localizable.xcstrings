@@ -81,6 +81,22 @@
         }
       }
     },
+    "BUTTON.EDIT_ITEM" : {
+        "localizations" : {
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bearbeiten"
+            }
+          },
+          "en" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Edit"
+            }
+          }
+        }
+    },
     "BUTTON.KNEW" : {
       "localizations" : {
         "de" : {
