@@ -8,6 +8,16 @@
 import SwiftUI
 import SwiftData
 
+let waitTimes = [
+    0: DateComponents(),
+    1: DateComponents(day: 1),
+    2: DateComponents(day: 3),
+    3: DateComponents(day: 7),
+    4: DateComponents(day: 14),
+    5: DateComponents(month: 1),
+    6: DateComponents(month: 3)
+]
+
 struct CardLearningView: View {
     @Query private var items: [Card]
     @State var showSolution = false
@@ -45,15 +55,15 @@ struct CardLearningView: View {
                 }
             }
             .onAppear {
-                if Calendar.current.date(
-                    byAdding: .day, value: 1, to: items[currentIndex].lastSeen
-                )! > Date() {
-                    print("Skipped card \(items[currentIndex].frontSide) as date \"\(items[currentIndex].lastSeen)\" has not passed for long enough")
+                if items[currentIndex].phase > 6 {
+                    print("Skipped card \(items[currentIndex].frontSide) as it is in phase \(items[currentIndex].phase)")
                     currentIndex += 1
                     return
                 }
-                if items[currentIndex].phase > 6 {
-                    print("Skipped card \(items[currentIndex].frontSide) as it is in phase \(items[currentIndex].phase)")
+                if Calendar.current.date(
+                    byAdding: waitTimes[items[currentIndex].phase]!, to: items[currentIndex].lastSeen
+                )! > Date() {
+                    print("Skipped card \(items[currentIndex].frontSide) as date \"\(items[currentIndex].lastSeen)\" has not passed for long enough")
                     currentIndex += 1
                     return
                 }
