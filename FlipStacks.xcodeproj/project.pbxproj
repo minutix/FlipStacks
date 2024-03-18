@@ -17,6 +17,8 @@
 		158413862BA6399B00C442D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158413852BA6399B00C442D4 /* Preview Assets.xcassets */; };
 		1584138D2BA639A900C442D4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584138C2BA639A900C442D4 /* Card.swift */; };
 		1590C8C52BA6D1A30084DF81 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1590C8C42BA6D1A30084DF81 /* AddView.swift */; };
+		15ECA3242BA8BB950040F788 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 15ECA3212BA8BB940040F788 /* LICENSE */; };
+		15ECA3252BA8BB950040F788 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 15ECA3222BA8BB940040F788 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		1584138C2BA639A900C442D4 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		1590C8C42BA6D1A30084DF81 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		15BAA4712BA743DB00AE83E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		15ECA3212BA8BB940040F788 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		15ECA3222BA8BB940040F788 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 		1584136F2BA6399800C442D4 = {
 			isa = PBXGroup;
 			children = (
+				15ECA3212BA8BB940040F788 /* LICENSE */,
+				15ECA3222BA8BB940040F788 /* README.md */,
 				1584137A2BA6399800C442D4 /* FlipStacks */,
 				158413792BA6399800C442D4 /* Products */,
 			);
@@ -156,9 +162,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15ECA3252BA8BB950040F788 /* README.md in Resources */,
 				158413862BA6399B00C442D4 /* Preview Assets.xcassets in Resources */,
 				158413822BA6399B00C442D4 /* Assets.xcassets in Resources */,
 				1546C24D2BA75C8100B66879 /* Localizable.xcstrings in Resources */,
+				15ECA3242BA8BB950040F788 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
