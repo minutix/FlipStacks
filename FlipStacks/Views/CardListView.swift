@@ -10,7 +10,7 @@ import SwiftData
 
 struct CardListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query var items: [Card]
+    @Query(sort: \Card.frontSide) var items: [Card]
     
     var body: some View {
         List(items) { item in
