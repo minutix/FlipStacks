@@ -35,6 +35,7 @@ struct CardLearningView: View {
                             items[currentIndex].phase -= 1
                             showSolution = false
                             currentIndex += 1
+                            findValidCard()
                         } label: {
                             Label("BUTTON.DIDNT_KNOW", systemImage: "xmark")
                         }
@@ -43,6 +44,7 @@ struct CardLearningView: View {
                             items[currentIndex].phase += 1
                             showSolution = false
                             currentIndex += 1
+                            findValidCard()
                         } label: {
                             Label("BUTTON.KNEW", systemImage: "checkmark")
                         }
@@ -56,21 +58,31 @@ struct CardLearningView: View {
                 }
             }
             .onAppear {
-                if items[currentIndex].phase > 6 {
-                    print("Skipped card \(items[currentIndex].frontSide) as it is in phase \(items[currentIndex].phase)")
-                    currentIndex += 1
-                    return
-                }
-                if Calendar.current.date(
-                    byAdding: waitTimes[items[currentIndex].phase]!, to: items[currentIndex].lastSeen
-                )! > Date() {
-                    print("Skipped card \(items[currentIndex].frontSide) as date \"\(items[currentIndex].lastSeen)\" has not passed for long enough")
-                    currentIndex += 1
-                    return
-                }
+                findValidCard()
             }
         } else {
             NoCardsLeftView()
         }
+    }
+    
+    private func findValidCard() {
+        while !cardIsValid(items[currentIndex]) {
+            currentIndex += 1
+        }
+        print("Found card \"\(items[currentIndex].frontSide)\" (Phase \(items[currentIndex].phase)).")
+    }
+    
+    private func cardIsValid(_ card: Card) -> Bool {
+        if card.phase > 6 {
+            print("Skipped card \"\(card.frontSide)\" as it is in phase \(card.phase)")
+            return false
+        }
+        if Calendar.current.date(
+            byAdding: waitTimes[card.phase]!, to: card.lastSeen
+        )! > Date() {
+            print("Skipped card \"\(card.frontSide)\" (Phase \(card.phase)) as date \"\(card.lastSeen)\" has not passed for long enough")
+            return false
+        }
+        return true
     }
 }
