@@ -33,6 +33,7 @@ struct CardLearningView: View {
                     HStack {
                         Button {
                             items[currentIndex].phase -= 1
+                            showSolution = false
                             currentIndex += 1
                         } label: {
                             Label("BUTTON.DIDNT_KNOW", systemImage: "xmark")
@@ -40,6 +41,7 @@ struct CardLearningView: View {
                         
                         Button {
                             items[currentIndex].phase += 1
+                            showSolution = false
                             currentIndex += 1
                         } label: {
                             Label("BUTTON.KNEW", systemImage: "checkmark")
@@ -48,7 +50,6 @@ struct CardLearningView: View {
                 } else {
                     Button {
                         showSolution = true
-                        print(showSolution)
                     } label: {
                         Text("BUTTON.SHOW_SOLUTION")
                     }
