@@ -32,7 +32,9 @@ struct CardLearningView: View {
                     Text(items[currentIndex].backSide)
                     HStack {
                         Button {
-                            items[currentIndex].phase -= 1
+                            if items[currentIndex].phase > 0 {
+                                items[currentIndex].phase -= 1
+                            }
                             showSolution = false
                             currentIndex += 1
                             findValidCard()
@@ -73,6 +75,9 @@ struct CardLearningView: View {
     }
     
     private func cardIsValid(_ card: Card) -> Bool {
+        if items[items.firstIndex(of: card)!].phase < 0 {
+            items[items.firstIndex(of: card)!].phase = 0
+        }
         if card.phase > 6 {
             print("Skipped card \"\(card.frontSide)\" as it is in phase \(card.phase)")
             return false
