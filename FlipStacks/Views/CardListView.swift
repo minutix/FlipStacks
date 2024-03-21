@@ -28,7 +28,7 @@ struct CardListView: View {
                 } label: {
                     Label("BUTTON.DELETE_ITEM", systemImage: "trash")
                 }
-            }
+            }/*
             .swipeActions(edge: .leading, allowsFullSwipe: false) {
                 Button {
                     modelContext.delete(item)
@@ -39,7 +39,7 @@ struct CardListView: View {
                         Label("BUTTON.EDIT_ITEM", systemImage: "pencil")
                     }
                 }
-            }
+            }*/
         }
         .toolbar {
             ToolbarItem {
