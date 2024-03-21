@@ -82,20 +82,21 @@
       }
     },
     "BUTTON.EDIT_ITEM" : {
-        "localizations" : {
-          "de" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Bearbeiten"
-            }
-          },
-          "en" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Edit"
-            }
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bearbeiten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
           }
         }
+      }
     },
     "BUTTON.KNEW" : {
       "localizations" : {
