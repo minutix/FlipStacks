@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository has been moved to a new owner. Please change your git remotes accordingly!
+
 # FlipStacks
 FlipStacks is a new flashcard app for iPhone, iPad and Mac[^1]. It's built with pure SwiftUI and SwiftData, so it runs blazingly fast and has easy to read code. The code is licensed under MPL2.0, the same license used for [HappyWork](https://github.com/libewa/hausaufgaben), so feel free to improve it.
 
