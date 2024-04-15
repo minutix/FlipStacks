@@ -22,9 +22,10 @@ struct CardLearningView: View {
     @Query private var items: [Card]
     @State var showSolution = false
     @Binding var currentIndex: Int
+    @State var showNoCardsLeftView = false
     
     var body: some View {
-        if items.indices.contains(currentIndex) {
+        if items.hasIndex(currentIndex) || !showNoCardsLeftView {
             VStack {
                 Text(items[currentIndex].frontSide)
                 if showSolution == true {
@@ -36,7 +37,7 @@ struct CardLearningView: View {
                                 items[currentIndex].phase -= 1
                             }
                             showSolution = false
-                            currentIndex += 1
+                            increaseIndex()
                             findValidCard()
                         } label: {
                             Label("BUTTON.DIDNT_KNOW", systemImage: "xmark")
@@ -45,7 +46,7 @@ struct CardLearningView: View {
                         Button {
                             items[currentIndex].phase += 1
                             showSolution = false
-                            currentIndex += 1
+                            increaseIndex()
                             findValidCard()
                         } label: {
                             Label("BUTTON.KNEW", systemImage: "checkmark")
@@ -64,12 +65,23 @@ struct CardLearningView: View {
             }
         } else {
             NoCardsLeftView()
+                .onAppear {
+                    showNoCardsLeftView = true
+                }
+        }
+    }
+    
+    private func increaseIndex() {
+        if items.hasIndex(currentIndex + 1) {
+            currentIndex += 1
+        } else {
+            showNoCardsLeftView = true
         }
     }
     
     private func findValidCard() {
         while !cardIsValid(items[currentIndex]) {
-            currentIndex += 1
+            increaseIndex()
         }
         print("Found card \"\(items[currentIndex].frontSide)\" (Phase \(items[currentIndex].phase)).")
     }
