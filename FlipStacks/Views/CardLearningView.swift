@@ -22,10 +22,9 @@ struct CardLearningView: View {
     @Query private var items: [Card]
     @State var showSolution = false
     @Binding var currentIndex: Int
-    @State var showNoCardsLeftView = false
     
     var body: some View {
-        if items.hasIndex(currentIndex) || !showNoCardsLeftView {
+        if items.hasIndex(currentIndex) {
             VStack {
                 Text(items[currentIndex].frontSide)
                 if showSolution == true {
@@ -43,13 +42,21 @@ struct CardLearningView: View {
                             Label("BUTTON.DIDNT_KNOW", systemImage: "xmark")
                         }
                         
-                        Button {
-                            items[currentIndex].phase += 1
-                            showSolution = false
-                            increaseIndex()
-                            findValidCard()
-                        } label: {
-                            Label("BUTTON.KNEW", systemImage: "checkmark")
+                        if items.hasIndex(currentIndex + 1) {
+                            Button {
+                                items[currentIndex].phase += 1
+                                showSolution = false
+                                increaseIndex()
+                                findValidCard()
+                            } label: {
+                                Label("BUTTON.KNEW", systemImage: "checkmark")
+                            }
+                        } else {
+                            NavigationLink {
+                                NoCardsLeftView()
+                            } label: {
+                                Label("BUTTON.KNEW", systemImage: "checkmark")
+                            }
                         }
                     }
                 } else {
@@ -65,17 +72,12 @@ struct CardLearningView: View {
             }
         } else {
             NoCardsLeftView()
-                .onAppear {
-                    showNoCardsLeftView = true
-                }
         }
     }
     
     private func increaseIndex() {
         if items.hasIndex(currentIndex + 1) {
             currentIndex += 1
-        } else {
-            showNoCardsLeftView = true
         }
     }
     

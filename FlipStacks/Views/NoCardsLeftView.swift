@@ -22,6 +22,7 @@ struct NoCardsLeftView: View {
                 Text("BUTTON.LIST_CARDS")
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
