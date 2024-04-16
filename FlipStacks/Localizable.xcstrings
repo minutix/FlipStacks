@@ -76,7 +76,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Didn't know solution"
+            "value" : "Didn't know"
           }
         }
       }
@@ -109,7 +109,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Knew solution"
+            "value" : "Knew"
           }
         }
       }
