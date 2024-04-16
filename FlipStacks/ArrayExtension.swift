@@ -8,7 +8,7 @@
 import Foundation
 
 extension Array {
-    func hasIndex(_ index: Index) -> Bool{
-        return self.indices.contains(index)
+    func hasIndex(_ i: Index) -> Bool{
+        return self.indices.contains(i)
     }
 }

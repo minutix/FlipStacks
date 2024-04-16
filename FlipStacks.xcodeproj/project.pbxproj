@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153C61CA2BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */; };
 		1546C24D2BA75C8100B66879 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1546C24C2BA75C8100B66879 /* Localizable.xcstrings */; };
 		157466DB2BCD5034005E49AE /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157466DA2BCD5034005E49AE /* ArrayExtension.swift */; };
 		1578BFF12BA715DD00BD4141 /* CardLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1578BFF02BA715DD00BD4141 /* CardLearningView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayHasAnyMoreValidCards.swift; sourceTree = "<group>"; };
 		1546C24C2BA75C8100B66879 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		157466DA2BCD5034005E49AE /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		1578BFF02BA715DD00BD4141 /* CardLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLearningView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				157466DA2BCD5034005E49AE /* ArrayExtension.swift */,
+				153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */,
 				1546C24C2BA75C8100B66879 /* Localizable.xcstrings */,
 				15BAA4712BA743DB00AE83E3 /* Info.plist */,
 				1584137B2BA6399800C442D4 /* FlipStacksApp.swift */,
@@ -184,6 +187,7 @@
 				1584137E2BA6399800C442D4 /* ContentView.swift in Sources */,
 				157466DB2BCD5034005E49AE /* ArrayExtension.swift in Sources */,
 				1584137C2BA6399800C442D4 /* FlipStacksApp.swift in Sources */,
+				153C61CA2BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift in Sources */,
 				1578BFF12BA715DD00BD4141 /* CardLearningView.swift in Sources */,
 				1590C8C52BA6D1A30084DF81 /* AddView.swift in Sources */,
 				1578BFF52BA7217000BD4141 /* CardListView.swift in Sources */,
@@ -315,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlipStacks/FlipStacks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"FlipStacks/Preview Content\"";
 				DEVELOPMENT_TEAM = 3ZKC6VXD5Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -355,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlipStacks/FlipStacks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"FlipStacks/Preview Content\"";
 				DEVELOPMENT_TEAM = 3ZKC6VXD5Z;
 				ENABLE_HARDENED_RUNTIME = YES;

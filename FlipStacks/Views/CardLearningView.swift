@@ -42,7 +42,7 @@ struct CardLearningView: View {
                             Label("BUTTON.DIDNT_KNOW", systemImage: "xmark")
                         }
                         
-                        if items.hasIndex(currentIndex + 1) {
+                        if items.hasMoreValidCards(starting: currentIndex + 1) {
                             Button {
                                 items[currentIndex].phase += 1
                                 showSolution = false
@@ -82,26 +82,9 @@ struct CardLearningView: View {
     }
     
     private func findValidCard() {
-        while !cardIsValid(items[currentIndex]) {
+        while !items[currentIndex].isValid() {
             increaseIndex()
         }
         print("Found card \"\(items[currentIndex].frontSide)\" (Phase \(items[currentIndex].phase)).")
-    }
-    
-    private func cardIsValid(_ card: Card) -> Bool {
-        if items[items.firstIndex(of: card)!].phase < 0 {
-            items[items.firstIndex(of: card)!].phase = 0
-        }
-        if card.phase > 6 {
-            print("Skipped card \"\(card.frontSide)\" as it is in phase \(card.phase)")
-            return false
-        }
-        if Calendar.current.date(
-            byAdding: waitTimes[card.phase]!, to: card.lastSeen
-        )! > Date() {
-            print("Skipped card \"\(card.frontSide)\" (Phase \(card.phase)) as date \"\(card.lastSeen)\" has not passed for long enough")
-            return false
-        }
-        return true
     }
 }
