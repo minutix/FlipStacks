@@ -20,13 +20,13 @@ struct ContentView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    NavigationLink("BUTTON.LIST_CARDS", destination: CardListView())
+                    NavigationLink("LIST_CARDS", destination: CardListView())
                 }
                 ToolbarItem {
                     NavigationLink {
                         AddView()
                     } label: {
-                        Label("BUTTON.ADD_NEW_CARDS", systemImage: "plus")
+                        Label("ADD_NEW_CARDS", systemImage: "plus")
                     }
                 }
             }

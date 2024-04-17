@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  FlipStacks
+
+  Created by Linus Warnatz on 17.04.24.
+  
+*/
+
+// The confirm button in the AddView
+"ADD_ITEM" = "Karte hinzufügen";
+
+// The navigation link leading to the AddView
+"ADD_NEW_CARDS" = "Neue Karten hinzufügen";
+
+// The message that appears when no cards are due this day
+"ALL_REVIEWED" = "Alle Karten für heute gelernt!";
+
+// The label for the text field defining the question on the card
+"FRONT_SIDE_FIELD" = "Vorderseite";
+
+// The label for the text field defining the solution on the card
+"BACK_SIDE_FIELD" = "Rückseite";
+
+// The label for the "Delete" swipe action
+"DELETE_ITEM" = "Löschen";
+
+// The button to increase the phase of a card
+"KNEW" = "Gewusst";
+
+// The button to decrease the phase of a card
+"DIDNT_KNOW" = "Nicht gewusst";
+
+// The navigation link leading to the CardListView
+"LIST_CARDS" = "Kartenliste";
+
+// The button for showing the solution
+"SHOW_SOLUTION" = "Lösung zeigen";

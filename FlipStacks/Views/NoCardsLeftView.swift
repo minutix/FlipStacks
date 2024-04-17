@@ -10,16 +10,16 @@ import SwiftUI
 struct NoCardsLeftView: View {
     var body: some View {
         VStack {
-            Text("ALL_CARDS_REVIEWED")
+            Text("ALL_REVIEWED")
             NavigationLink {
                 AddView()
             } label: {
-                Text("BUTTON.ADD_NEW_CARDS")
+                Text("ADD_NEW_CARDS")
             }
             NavigationLink {
                 CardListView()
             } label: {
-                Text("BUTTON.LIST_CARDS")
+                Text("LIST_CARDS")
             }
         }
         .navigationBarBackButtonHidden()

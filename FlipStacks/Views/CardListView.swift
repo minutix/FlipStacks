@@ -26,7 +26,7 @@ struct CardListView: View {
                 Button(role: .destructive) {
                     modelContext.delete(item)
                 } label: {
-                    Label("BUTTON.DELETE_ITEM", systemImage: "trash")
+                    Label("DELETE_ITEM", systemImage: "trash")
                 }
             }/*
             .swipeActions(edge: .leading, allowsFullSwipe: false) {
@@ -46,7 +46,7 @@ struct CardListView: View {
                 NavigationLink {
                     AddView()
                 } label: {
-                    Label("BUTTON.ADD_NEW_CARDS", systemImage: "plus")
+                    Label("ADD_NEW_CARDS", systemImage: "plus")
                 }
             }
         }

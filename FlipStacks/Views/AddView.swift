@@ -23,12 +23,12 @@ struct AddView: View {
     var body: some View {
         VStack {
             Form {
-                TextField("TEXT_FIELD.FRONT_SIDE", text: $frontSide)
-                TextField("TEXT_FIELD.BACK_SIDE", text: $backSide)
+                TextField("FRONT_SIDE_FIELD", text: $frontSide)
+                TextField("BACK_SIDE_FIELD", text: $backSide)
                 Button {
                     addCard()
                 } label: {
-                    Label("BUTTON.ADD_ITEM", systemImage: "plus")
+                    Label("ADD_ITEM", systemImage: "plus")
                 }
             }
         }

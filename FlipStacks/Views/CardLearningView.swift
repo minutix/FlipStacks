@@ -8,23 +8,13 @@
 import SwiftUI
 import SwiftData
 
-let waitTimes = [
-    0: DateComponents(),
-    1: DateComponents(day: 1),
-    2: DateComponents(day: 3),
-    3: DateComponents(day: 7),
-    4: DateComponents(day: 14),
-    5: DateComponents(month: 1),
-    6: DateComponents(month: 3)
-]
-
 struct CardLearningView: View {
     @Query private var items: [Card]
     @State var showSolution = false
     @Binding var currentIndex: Int
     
     var body: some View {
-        if items.hasIndex(currentIndex) {
+        if items.hasIndex(currentIndex) && items[currentIndex].isValid() {
             VStack {
                 Text(items[currentIndex].frontSide)
                 if showSolution == true {
@@ -35,27 +25,37 @@ struct CardLearningView: View {
                             if items[currentIndex].phase > 0 {
                                 items[currentIndex].phase -= 1
                             }
+                            print("Set \"\(items[currentIndex].frontSide)\" to phase \(items[currentIndex].phase)")
                             showSolution = false
                             increaseIndex()
                             findValidCard()
                         } label: {
-                            Label("BUTTON.DIDNT_KNOW", systemImage: "xmark")
+                            Label("DIDNT_KNOW", systemImage: "xmark")
                         }
                         
                         if items.hasMoreValidCards(starting: currentIndex + 1) {
                             Button {
                                 items[currentIndex].phase += 1
+                                print("Set \"\(items[currentIndex].frontSide)\" to phase \(items[currentIndex].phase)")
                                 showSolution = false
                                 increaseIndex()
                                 findValidCard()
                             } label: {
-                                Label("BUTTON.KNEW", systemImage: "checkmark")
+                                Label("KNEW", systemImage: "checkmark")
                             }
                         } else {
                             NavigationLink {
                                 NoCardsLeftView()
                             } label: {
-                                Label("BUTTON.KNEW", systemImage: "checkmark")
+                                Button {
+                                    items[currentIndex].phase += 1
+                                    print("Set \"\(items[currentIndex].frontSide)\" to phase \(items[currentIndex].phase)")
+                                    showSolution = false
+                                    increaseIndex()
+                                    findValidCard()
+                                } label: {
+                                    Label("KNEW", systemImage: "checkmark")
+                                }
                             }
                         }
                     }
@@ -63,7 +63,7 @@ struct CardLearningView: View {
                     Button {
                         showSolution = true
                     } label: {
-                        Text("BUTTON.SHOW_SOLUTION")
+                        Text("SHOW_SOLUTION")
                     }
                 }
             }

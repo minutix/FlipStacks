@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151678C42BD025280030F6DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 151678C22BD025280030F6DB /* Localizable.strings */; };
 		153C61CA2BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */; };
-		1546C24D2BA75C8100B66879 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1546C24C2BA75C8100B66879 /* Localizable.xcstrings */; };
 		157466DB2BCD5034005E49AE /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157466DA2BCD5034005E49AE /* ArrayExtension.swift */; };
 		1578BFF12BA715DD00BD4141 /* CardLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1578BFF02BA715DD00BD4141 /* CardLearningView.swift */; };
 		1578BFF32BA717EF00BD4141 /* NoCardsLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1578BFF22BA717EF00BD4141 /* NoCardsLeftView.swift */; };
@@ -24,8 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		151678C32BD025280030F6DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizations/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		151678C52BD025450030F6DB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizations/de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		151678C82BD026CF0030F6DB /* base.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = base.strings; sourceTree = "<group>"; };
 		153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayHasAnyMoreValidCards.swift; sourceTree = "<group>"; };
-		1546C24C2BA75C8100B66879 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		157466DA2BCD5034005E49AE /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		1578BFF02BA715DD00BD4141 /* CardLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLearningView.swift; sourceTree = "<group>"; };
 		1578BFF22BA717EF00BD4141 /* NoCardsLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCardsLeftView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151678C12BD025020030F6DB /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				151678C82BD026CF0030F6DB /* base.strings */,
+				151678C22BD025280030F6DB /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		1584136F2BA6399800C442D4 = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +88,11 @@
 			children = (
 				157466DA2BCD5034005E49AE /* ArrayExtension.swift */,
 				153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */,
-				1546C24C2BA75C8100B66879 /* Localizable.xcstrings */,
+				1584138C2BA639A900C442D4 /* Card.swift */,
 				15BAA4712BA743DB00AE83E3 /* Info.plist */,
+				151678C12BD025020030F6DB /* Localizations */,
 				1584137B2BA6399800C442D4 /* FlipStacksApp.swift */,
 				1590C8C62BA6D1A70084DF81 /* Views */,
-				1584138C2BA639A900C442D4 /* Card.swift */,
 				158413812BA6399B00C442D4 /* Assets.xcassets */,
 				158413832BA6399B00C442D4 /* FlipStacks.entitlements */,
 				158413842BA6399B00C442D4 /* Preview Content */,
@@ -169,9 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				15ECA3252BA8BB950040F788 /* README.md in Resources */,
+				151678C42BD025280030F6DB /* Localizable.strings in Resources */,
 				158413862BA6399B00C442D4 /* Preview Assets.xcassets in Resources */,
 				158413822BA6399B00C442D4 /* Assets.xcassets in Resources */,
-				1546C24D2BA75C8100B66879 /* Localizable.xcstrings in Resources */,
 				15ECA3242BA8BB950040F788 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +207,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		151678C22BD025280030F6DB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				151678C32BD025280030F6DB /* en */,
+				151678C52BD025450030F6DB /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		158413872BA6399B00C442D4 /* Debug */ = {
