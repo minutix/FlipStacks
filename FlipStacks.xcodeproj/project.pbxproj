@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		151678C42BD025280030F6DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 151678C22BD025280030F6DB /* Localizable.strings */; };
+		151678CA2BD02EA10030F6DB /* ExportedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151678C92BD02EA10030F6DB /* ExportedDataView.swift */; };
 		153C61CA2BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */; };
 		157466DB2BCD5034005E49AE /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157466DA2BCD5034005E49AE /* ArrayExtension.swift */; };
 		1578BFF12BA715DD00BD4141 /* CardLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1578BFF02BA715DD00BD4141 /* CardLearningView.swift */; };
@@ -27,6 +28,7 @@
 		151678C32BD025280030F6DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizations/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		151678C52BD025450030F6DB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizations/de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		151678C82BD026CF0030F6DB /* base.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = base.strings; sourceTree = "<group>"; };
+		151678C92BD02EA10030F6DB /* ExportedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportedDataView.swift; sourceTree = "<group>"; };
 		153C61C92BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayHasAnyMoreValidCards.swift; sourceTree = "<group>"; };
 		157466DA2BCD5034005E49AE /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		1578BFF02BA715DD00BD4141 /* CardLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLearningView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				1578BFF02BA715DD00BD4141 /* CardLearningView.swift */,
 				1578BFF42BA7217000BD4141 /* CardListView.swift */,
 				1590C8C42BA6D1A30084DF81 /* AddView.swift */,
+				151678C92BD02EA10030F6DB /* ExportedDataView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				1578BFF32BA717EF00BD4141 /* NoCardsLeftView.swift in Sources */,
 				1584137E2BA6399800C442D4 /* ContentView.swift in Sources */,
 				157466DB2BCD5034005E49AE /* ArrayExtension.swift in Sources */,
+				151678CA2BD02EA10030F6DB /* ExportedDataView.swift in Sources */,
 				1584137C2BA6399800C442D4 /* FlipStacksApp.swift in Sources */,
 				153C61CA2BCEE6CE000DC48B /* ArrayHasAnyMoreValidCards.swift in Sources */,
 				1578BFF12BA715DD00BD4141 /* CardLearningView.swift in Sources */,

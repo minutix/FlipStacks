@@ -19,7 +19,14 @@ let waitTimes = [
 ]
 
 @Model
-final class Card {
+final class Card: Codable {
+    enum CodingKeys: String, CodingKey {
+        case frontSide
+        case backSide
+        case phase
+        case lastSeen
+    }
+    
     var frontSide: String = ""
     var backSide: String = ""
     var phase: Int = 0
@@ -30,10 +37,24 @@ final class Card {
         self.backSide = backSide
         self.lastSeen = lastSeen
     }
-    init(frontSide: String, backSide: String) {
-        self.frontSide = frontSide
-        self.backSide = backSide
-        self.lastSeen = Date()
+    convenience init(frontSide: String, backSide: String) {
+        self.init(frontSide: frontSide, backSide: backSide, lastSeen: Date())
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        frontSide = try container.decode(String.self, forKey: .frontSide)
+        backSide = try container.decode(String.self, forKey: .backSide)
+        phase = try container.decode(Int.self, forKey: .phase)
+        lastSeen = try container.decode(Date.self, forKey: .lastSeen)
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: Card.CodingKeys.self)
+        try container.encode(frontSide, forKey: .frontSide)
+        try container.encode(backSide, forKey: .backSide)
+        try container.encode(phase, forKey: .phase)
+        try container.encode(lastSeen, forKey: .lastSeen)
     }
     
     func isValid() -> Bool {

@@ -43,6 +43,18 @@ struct CardListView: View {
         }
         .toolbar {
             ToolbarItem {
+                ShareLink(items: String(
+                    data: try! JSONEncoder().encode(items), encoding: .utf8
+                )!)
+            }
+            ToolbarItem {
+                NavigationLink {
+                    ExportedDataView(data: items)
+                } label: {
+                    Label("IMPORT_CARDS", systemImage: "square.and.arrow.down")
+                }
+            }
+            ToolbarItem {
                 NavigationLink {
                     AddView()
                 } label: {
