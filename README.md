@@ -13,3 +13,4 @@ TestFlight access will be provided here once Apple approves my first build.
 ### App Store
 An App Store link will be provided here once the app gets released.
 
+[^1]: iPhone, iPad and Mac are trademarks of Apple Inc. registered in the US and other countries. FlipStacks is not endorsed by Apple in any way, shape or form.
