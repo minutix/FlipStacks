@@ -37,11 +37,12 @@ final class Card {
     }
     
     func isValid() -> Bool {
+        print("Checking card \"\(self.frontSide)\" – \"\(self.backSide)\" (phase \(self.phase), last seen \(self.lastSeen)")
         if self.phase < 0 {
             self.phase = 0
         }
         if self.phase > 6 {
-            print("Skipped card \"\(self.frontSide)\" as it is in phase \(self.phase)")
+            print("Skipped card (done)")
             return false
         }
         if Calendar.current.startOfDay(
@@ -49,7 +50,7 @@ final class Card {
                 byAdding: waitTimes[self.phase]!, to: self.lastSeen
             )!
         ) > Calendar.current.startOfDay(for: Date()) {
-            print("Skipped card \"\(self.frontSide)\" (Phase \(self.phase)) as date \"\(self.lastSeen)\" has not passed for long enough")
+            print("Skipped card (not due)")
             return false
         }
         return true

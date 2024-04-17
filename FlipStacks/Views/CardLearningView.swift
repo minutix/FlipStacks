@@ -25,6 +25,7 @@ struct CardLearningView: View {
                             if items[currentIndex].phase > 0 {
                                 items[currentIndex].phase -= 1
                             }
+                            items[currentIndex].lastSeen = Date()
                             print("Set \"\(items[currentIndex].frontSide)\" to phase \(items[currentIndex].phase)")
                             showSolution = false
                             increaseIndex()
@@ -33,30 +34,15 @@ struct CardLearningView: View {
                             Label("DIDNT_KNOW", systemImage: "xmark")
                         }
                         
-                        if items.hasMoreValidCards(starting: currentIndex + 1) {
-                            Button {
-                                items[currentIndex].phase += 1
-                                print("Set \"\(items[currentIndex].frontSide)\" to phase \(items[currentIndex].phase)")
-                                showSolution = false
-                                increaseIndex()
-                                findValidCard()
-                            } label: {
-                                Label("KNEW", systemImage: "checkmark")
-                            }
-                        } else {
-                            NavigationLink {
-                                NoCardsLeftView()
-                            } label: {
-                                Button {
-                                    items[currentIndex].phase += 1
-                                    print("Set \"\(items[currentIndex].frontSide)\" to phase \(items[currentIndex].phase)")
-                                    showSolution = false
-                                    increaseIndex()
-                                    findValidCard()
-                                } label: {
-                                    Label("KNEW", systemImage: "checkmark")
-                                }
-                            }
+                        Button {
+                            items[currentIndex].phase += 1
+                            items[currentIndex].lastSeen = Date()
+                            print("Set \"\(items[currentIndex].frontSide)\" to phase \(items[currentIndex].phase)")
+                            showSolution = false
+                            increaseIndex()
+                            findValidCard()
+                        } label: {
+                            Label("KNEW", systemImage: "checkmark")
                         }
                     }
                 } else {
